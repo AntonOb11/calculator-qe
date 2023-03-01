@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath>
+#include <windows.h>
+using namespace std;
+int main()
+{
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+  double a, b, c, x0, x1, x2, D;
+  cout << "\n\t\tКалькулятор уравнений типа ax^2+bx+c=0" << endl<<endl;
+  cout << "Ваш параметр a -> ";
+  cin >> a;
+  cout << a << "x^2+bx+c=0" << endl;
+  cout << "Ваш параметр b -> ";
+  cin >> b;
+  cout << a << "x^2+" << b << "x+c=0" << endl;
+  cout << "Ваш параметр c -> ";
+  cin >> c;
+  cout << "Ваше уравнение выглядит так -> ";
+  cout << a << "x^2+" << b << "x+" << c << " = 0" << endl;
+  D = b * b + 4 * a * c;
+     if (D < 0)
+  {
+    cout << "\n\t\tУравнение не имеет решений" << endl;
+  }
+    else
+      if (D == 0)
+      {
+        cout << "\n\t\tУравнение имеет только одно решение" << endl << endl;
+        x0 = -b / 2 * a;
+        cout << "Корень -> " << x0 << endl;
+      }
+      else
+        if (D > 0)
+        {
+          cout << "\n\t\tУравнение имеет два корня" << endl << endl;
+          x1 = -b + sqrt(D) / 2 * a;
+          x2 = -b - sqrt(D) / 2 * a;
+          cout << "Первый -> " << x1 << endl;
+          cout << "Второй -> " << x2 << endl;
+        }
+  return 0;
+}
